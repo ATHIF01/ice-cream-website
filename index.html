@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frosty Delights - Premium Ice Cream</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f1ff;
+            color: #333;
+        }
+
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1579954115563-e72bf1381629?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+        }
+#c1{
+    color: #000000;
+}
+        .logo {
+            width: 140px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin: 10px 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .register-btn {
+            background: #ff99cc;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .container {
+            padding: 0 7%;
+        }
+
+        .header h1 {
+            font-size: 4vw;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            padding-top: 22%;
+        }
+
+        .search-bar {
+            background: #fff;
+            width: 70%;
+            margin: 30px auto;
+            padding: 6px 10px 6px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar form {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .search-bar form input {
+            border: 0;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            padding: 10px 0;
+        }
+
+        .search-bar form button {
+            background: #ff99cc;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .search-bar form button img {
+            width: 15px;
+            margin-top: 7px;
+        }
+
+        .location-input {
+            flex: 1;
+        }
+
+        .exclusives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .exclusives div img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .exclusives div {
+            position: relative;
+        }
+
+        .exclusives div span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .trending {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .trending div img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .trending h3 {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .cta {
+            margin: 80px 0;
+            background-image: linear-gradient(to right, #ff99cc, #ff66b2);
+            color: #fff;
+            border-radius: 10px;
+            padding: 5% 10%;
+            text-align: center;
+        }
+
+        .cta h3 {
+            font-size: 4vw;
+            line-height: 5.3vw;
+            font-weight: 500;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #ff99cc;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stories div img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .stories div {
+            position: relative;
+            text-align: center;
+        }
+
+        .stories p {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 26px;
+        }
+
+        .start-btn {
+            text-decoration: none;
+            background: #ff99cc;
+            color: #fff;
+            width: 80%;
+            max-width: 350px;
+            display: block;
+            text-align: center;
+            margin: 60px auto;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 20px;
+        }
+
+        .about-msg {
+            text-align: center;
+            margin: 80px 0;
+            color: #333;
+            font-size: 17px;
+        }
+
+        .about-msg h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .footer {
+            margin: 80px 0 10px;
+            text-align: center;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #999;
+            font-size: 14px;
+            margin: 0 10px;
+        }
+
+        .footer hr {
+            background: #999;
+            height: 1px;
+            width: 100%;
+            border: 0;
+            margin: 20px 0;
+        }
+
+        .footer p {
+            padding-bottom: 15px;
+        }
+
+        .active {
+            position: relative;
+        }
+
+        .active::after {
+            content: '';
+            background: #fff;
+            width: 25px;
+            height: 2px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -12px;
+            border-radius: 2px;
+        }
+
+        .sub-title {
+            margin: 50px 0 20px;
+            font-size: 2.2vw;
+            font-weight: 500;
+            color: #333;
+        }
+
+        @media screen and (max-width: 700px) {
+            .logo {
+                position: fixed;
+                top: 4%;
+                left: 7%;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                z-index: 100;
+                display: inline-block;
+                width: 100%;
+                padding: 100px 7% 0;
+                background: #000;
+                text-align: right;
+                max-height: 100px;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+
+            nav .nav-links li {
+                margin: 10px 0;
+                display: block;
+            }
+
+            .register-btn {
+                margin: 15px 0 30px;
+                display: inline-block;
+            }
+
+            .header h1 {
+                padding-top: 200px;
+                font-size: 7vw;
+            }
+
+            .search-bar {
+                width: 90%;
+                margin: 30px auto;
+                padding: 20px 10px 30px;
+                border-radius: 5px;
+                position: relative;
+            }
+
+            .search-bar form {
+                display: block;
+            }
+
+            .search-bar form input {
+                border-bottom: 1px solid #ddd;
+                width: 100%;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .search-bar form button {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+            }
+
+            .sub-title {
+                font-size: 6vw;
+            }
+
+            .cta {
+                padding: 15% 5%;
+            }
+
+            .cta h3 {
+                font-size: 7vw;
+                line-height: 8vw;
+            }
+
+            .cta p {
+                font-size: 14px;
+            }
+
+            .cta-btn {
+                padding: 6px 15px;
+                border-radius: 4px;
+                margin-top: 10px;
+                font-size: 14px;
+            }
+
+            .stories p {
+                font-size: 22px;
+            }
+
+            .about-msg {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">FROSTY DELIGHTS</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Popular Flavors</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Stores</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="register-btn">Sign Up</a>
+        </nav>
+        <div class="container">
+            <h1>Discover the Perfect Ice Cream Experience</h1>
+            <div class="search-bar">
+                <form>
+                    <div class="location-input">
+                        <label>Location</label>
+                        <input type="text" placeholder="Find a store near you">
+                    </div>
+                    <div>
+                        <label>Flavor</label>
+                        <input type="text" placeholder="What flavor are you craving?">
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="sub-title">Premium Ice Cream Flavors</h2>
+        <div class="exclusives">
+            <div>
+                <img height="350px" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Vanilla Bean">
+                <p id="c1">Vanilla Bean</p>
+            </div>
+            <div>
+                <img height="350px" src="https://www.recipetineats.com/tachyon/2023/07/Hot-chocolate-fudge-cake_7-2.jpg" alt="Chocolate Fudge">
+                <p id="c1">Chocolate Fudge</p>
+            </div>
+            <div>
+                <img height="350px" src="https://pbs.twimg.com/media/Ers8zCxXcAMc4HS?format=jpg&name=4096x4096" alt="Strawberry Fields">
+                <p id="c1">Strawberry Fields</p>
+            </div>
+            <div>
+                <img height="350px" src="https://www.simplystacie.net/wp-content/uploads/2024/04/Mint-Chocolate-Chip-Ice-Cream-LOW-RES-25.jpg" alt="Mint Chocolate Chip">
+                <p id="c1">Mint Chocolate Chip</p>
+            </div>
+            <div>
+                <img height="350px" src="https://i.pinimg.com/564x/44/c5/02/44c50249c6dd23480ee1b4831416f7b0.jpg" alt="Cookies & Cream">
+                <p id="c1">Cookies & Cream</p>
+            </div>
+        </div>
+
+        <h2 class="sub-title">Trending Ice Cream Creations</h2>
+        <div class="trending">
+            <div>
+                <img height="400px" src="https://www.sundaeicecream.com/cdn/shop/files/home-fresh.png?v=1651181078&width=1500" alt="Sundae Deluxe">
+                <h3>Sundae Deluxe</h3>
+            </div>
+            <div>
+                <img height="400px" src="https://thesugarfreediva.com/wp-content/uploads/2021/04/cone-feature.jpg" alt="Waffle Cone Special">
+                <h3>Waffle Cone Special</h3>
+            </div>
+            <div>
+                <img height="400px" src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FSeries%2F2021-05-how-to-banana-split%2F2021-05-18_ATK-0453" alt="Banana Split">
+                <h3>Banana Split</h3>
+            </div>
+            <div>
+                <img height="400px" src="https://i.pinimg.com/736x/f0/41/0a/f0410abe6c12bfbd1de26e1c2029c2e1.jpg" alt="Milkshake Madness">
+                <h3>Milkshake Madness</h3>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h3>Become a Frosty Delights Member & Get Exclusive Offers</h3>
+            <p>Join our ice cream club and receive special discounts, exclusive flavors, and more!</p>
+            <a href="#" class="cta-btn">Sign Up Now</a>
+        </div>
+
+        <h2 class="sub-title">Ice Cream Stories</h2>
+        <div class="stories">
+            <div>
+                <img height="600px" src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/how-to-make-homemade-ice-cream.jpg" alt="Our Story">
+                <p>Our Story</p>
+            </div>
+            <div>
+                <img height="600px" src="https://img.freepik.com/premium-photo/ice-cream-cone-with-sweet-toppings-beach-sea-blue-sky-summer-background-summer-food-fun-concept-digital-art-illustration-theme-generative-ai_10307-3365.jpg" alt="Farm-to-Cone">
+                <p>Farm-to-Cone</p>
+            </div>
+            <div>
+                <img height="600px" src="https://antdisplay.com/pub/media/magefan_blog/001.jpg" alt="Flavor Lab">
+                <p>Flavor Lab</p>
+            </div>
+        </div>
+
+        <a href="#" class="start-btn">Start Planning Your Ice Cream Adventure</a>
+
+        <div class="about-msg">
+            <h2>About Frosty Delights</h2>
+            <p>Frosty Delights has been crafting premium ice cream since 1985. Our commitment to quality ingredients and innovative flavors has made us a favorite among ice cream enthusiasts around the world. From classic flavors to unique creations, we take pride in delivering the perfect scoop every time.</p>
+        </div>
+
+        <div class="footer">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Support</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <hr>
+            <p>© 2025 Frosty Delights, Inc. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
